@@ -1,0 +1,39 @@
+// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   ArraylisTest.java
+
+package com.test;
+
+import java.io.PrintStream;
+import java.util.*;
+
+public class ArraylisTest
+{
+
+    public ArraylisTest()
+    {
+    }
+
+    public static void main(String args[])
+    {
+        ArrayList arraylist = new ArrayList();
+        arraylist.add("1");
+        arraylist.add("2");
+        arraylist.add("3");
+        arraylist.add("4");
+        arraylist.add("5");
+        System.out.println((new StringBuilder()).append("\u9358\u71B8\u6F75\u9428\u5232ist:").append(arraylist).toString());
+        Iterator iterator = arraylist.iterator();
+        do
+        {
+            if(!iterator.hasNext())
+                break;
+            String s = (String)iterator.next();
+            System.out.println(s);
+            if("2".equals(s))
+                arraylist.remove(s);
+        } while(true);
+        System.out.println((new StringBuilder()).append("\u6DC7\uE1BD\u657C\u935A\u5EA3\u6B91list:: ").append(arraylist).toString());
+    }
+}
