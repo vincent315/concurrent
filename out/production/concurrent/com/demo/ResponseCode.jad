@@ -1,0 +1,57 @@
+// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   ResponseCode.java
+
+package com.demo;
+
+
+public final class ResponseCode extends Enum
+{
+
+    public static ResponseCode[] values()
+    {
+        return (ResponseCode[])$VALUES.clone();
+    }
+
+    public static ResponseCode valueOf(String s)
+    {
+        return (ResponseCode)Enum.valueOf(com/demo/ResponseCode, s);
+    }
+
+    private ResponseCode(String s, int i, int j, String s1)
+    {
+        super(s, i);
+        code = j;
+        desc = s1;
+    }
+
+    public int getCode()
+    {
+        return code;
+    }
+
+    public String getDesc()
+    {
+        return desc;
+    }
+
+    public static final ResponseCode SUCCESS;
+    public static final ResponseCode ERROR;
+    public static final ResponseCode NEED_LOGIN;
+    public static final ResponseCode ILLEGAL_ARGUMENT;
+    private final int code;
+    private final String desc;
+    private static final ResponseCode $VALUES[];
+
+    static 
+    {
+        SUCCESS = new ResponseCode("SUCCESS", 0, 0, "SUCCESS");
+        ERROR = new ResponseCode("ERROR", 1, 1, "ERROR");
+        NEED_LOGIN = new ResponseCode("NEED_LOGIN", 2, 10, "NEED_LOGIN");
+        ILLEGAL_ARGUMENT = new ResponseCode("ILLEGAL_ARGUMENT", 3, 2, "ILLEGAL_ARGUMENT");
+        $VALUES = (new ResponseCode[] {
+            SUCCESS, ERROR, NEED_LOGIN, ILLEGAL_ARGUMENT
+        });
+    }
+}
